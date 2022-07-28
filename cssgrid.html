@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid in css</title>
+
+    <style>
+        .container {
+            display: grid;
+            /* here 200px auto is width of the cloumn */
+            grid-template-columns: 200px auto auto 200px;
+            grid-gap: 1rem;
+            /* grid-template-columns: repeat(4,auto); */
+            /* grid-template-columns: 1fr 2fr 3fr 4fr; */
+        }
+
+        .item {
+            border: 2px solid red;
+            background-color: aquamarine;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .box {
+            display: grid;
+            grid-template-rows: 1fr 4fr 2fr;
+            grid-auto-rows: 3fr;
+            grid-template-columns: 1fr 4fr 2fr 1fr;
+            grid-gap: 1rem;
+
+        }
+
+        .grid {
+            border: 2px solid black;
+            background-color: palegreen;
+            padding: 5px;
+            text-align: center;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            grid-column-gap: 3rem;
+            grid-row-gap: 1rem;
+        }
+
+        .Box:first-child {
+            /* grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4; */
+
+            grid-column: 1/span 3;
+            grid-row: 1/span 3;
+
+        }
+
+        .Box {
+            border: 2px solid darkmagenta;
+            background-color: palegoldenrod;
+            padding: 5px;
+            text-align: center;
+        }
+
+        #item {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+            grid-gap: 1rem;
+
+        }
+
+        .Cont {
+            border: 2px solid darkorange;
+            background-color: bisque;
+            text-align: center;
+            padding: 5px;
+        }
+
+        #container {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas: 'navbar navbar navbar navbar navbar''section section section aside aside''footer footer footer footer footer';
+        }
+
+        .items {
+            border: 2px solid rgb(5, 5, 163);
+            background-color: rgb(146, 217, 219);
+        }
+
+        #navbar {
+            padding:4px;
+            font-size: 25px;
+            grid-area: navbar;
+        }
+
+        #section {
+            padding: 5px;
+            font-size: 25px;
+            height: 400px;
+            grid-area: section;
+            text-align: center;
+        }
+
+        #aside {
+            padding: 5px;
+            font-size: 25px;
+            text-align: center;
+            grid-area: aside;
+        }
+
+        #footer {
+            padding: 5px;
+            text-align: center;
+            font-size: 25px;
+            grid-area: footer;
+        }
+
+        #cont {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas: 'navbar navbar navbar''section section aside''footer footer footer';
+
+        }
+
+        #N {
+            grid-area: navbar;
+        }
+
+        #S {
+            grid-area: section;
+        }
+
+        #A {
+            grid-area: aside;
+        }
+
+        #F {
+            grid-area: footer;
+        }
+
+        .boxes {
+            padding: 5px;
+            border: 2px solid darkmagenta;
+            background-color: plum;
+
+        }
+
+        span {
+            font-size: 25px;
+        }
+
+        @media (max-width: 200px) {
+            #cont {
+                grid-template-areas: 'navbar navbar navbar''section section section''footer footer footer';
+            }
+
+            span {
+                display: block;
+            }
+        }
+
+        @media (min-width: 200px) and (max-width: 400px) {
+            #cont {
+                grid-template-areas: 'navbar navbar navbar''section section aside''footer footer footer';
+            }
+            span {
+                display: block;
+            }
+            .boxes{background-color: aqua;}
+        }
+
+        @media (min-width: 400px) and (max-width: 800px) {
+            #cont {
+                grid-template-areas: 'navbar navbar navbar''section section section''aside aside aside''footer footer footer';
+            }
+            span {
+                display: block;
+            }
+            .boxes{background-color: rgb(45, 218, 123);}
+        }
+
+        @media (min-width: 800px) and (max-width:1400px) {
+            #cont {
+                grid-template-areas: 'navbar navbar navbar''section section aside''footer footer footer';
+            }
+            span {
+                display: block;
+            }
+            .boxes{background-color: rgb(147, 137, 238);}
+        }
+
+        @media (min-width: 1400px) and (max-width:2200px) {
+            #cont {
+                grid-template-areas: 'navbar navbar navbar''section section aside''footer footer footer';
+            }
+            .boxes{background-color: rgb(222, 240, 63);}
+        }
+
+        @media (min-width: 2200px) {
+            #cont {
+                grid-template-areas: 'navbar navbar navbar''section aside aside''footer footer footer';
+            }
+            .boxes{background-color: rgb(241, 97, 229);}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">Hi! What are doing 1?</div>
+        <div class="item">Hi! What are doing 2?</div>
+        <div class="item">Hi! What are doing 3?</div>
+        <div class="item">Hi! What are doing 4?</div>
+        <div class="item">Hi! What are doing 5?</div>
+        <div class="item">Hi! What are doing 6?</div>
+        <div class="item">Hi! What are doing 7?</div>
+        <div class="item">Hi! What are doing 8?</div>
+        <div class="item">Hi! What are doing 9?</div>
+        <div class="item">Hi! What are doing 10?</div>
+        <div class="item">Hi! What are doing 11?</div>
+        <div class="item">Hi! What are doing 12?</div>
+        <div class="item">Hi! What are doing 13?</div>
+        <div class="item">Hi! What are doing 14?</div>
+        <div class="item">Hi! What are doing 15?</div>
+        <div class="item">Hi! What are doing 16?</div>
+        <div class="item">Hi! What are doing 17?</div>
+        <div class="item">Hi! What are doing 18?</div>
+        <div class="item">Hi! What are doing 19?</div>
+        <div class="item">Hi! What are doing 20?</div>
+        <div class="item">Hi! What are doing 21?</div>
+        <div class="item">Hi! What are doing 22?</div>
+        <div class="item">Hi! What are doing 23?</div>
+        <div class="item">Hi! What are doing 24?</div>
+        <div class="item">Hi! What are doing 25?</div>
+        <div class="item">Hi! What are doing 26?</div>
+        <div class="item">Hi! What are doing 27?</div>
+        <div class="item">Hi! What are doing 28?</div>
+        <div class="item">Hi! What are doing 29?</div>
+        <div class="item">Hi! What are doing 30?</div>
+        <div class="item">Hi! What are doing 31?</div>
+        <div class="item">Hi! What are doing 32?</div>
+    </div>
+
+    <br>
+
+    <div class="box">
+        <div class="grid">Hello, I am doing the project no. 1</div>
+        <div class="grid">Hello, I am doing the project no. 2</div>
+        <div class="grid">Hello, I am doing the project no. 3</div>
+        <div class="grid">Hello, I am doing the project no. 4</div>
+        <div class="grid">Hello, I am doing the project no. 5</div>
+        <div class="grid">Hello, I am doing the project no. 6</div>
+        <div class="grid">Hello, I am doing the project no. 7</div>
+        <div class="grid">Hello, I am doing the project no. 8</div>
+        <div class="grid">Hello, I am doing the project no. 9</div>
+        <div class="grid">Hello, I am doing the project no. 10</div>
+        <div class="grid">Hello, I am doing the project no. 11</div>
+        <div class="grid">Hello, I am doing the project no. 12</div>
+        <div class="grid">Hello, I am doing the project no. 13</div>
+        <div class="grid">Hello, I am doing the project no. 14</div>
+        <div class="grid">Hello, I am doing the project no. 15</div>
+        <div class="grid">Hello, I am doing the project no. 16</div>
+    </div>
+
+    <br>
+
+    <div id="grid">
+        <div class="Box">Hi! Where are going 1</div>
+        <div class="Box">Hi! Where are going 2</div>
+        <div class="Box">Hi! Where are going 3</div>
+        <div class="Box">Hi! Where are going 4</div>
+        <div class="Box">Hi! Where are going 5</div>
+        <div class="Box">Hi! Where are going 6</div>
+        <div class="Box">Hi! Where are going 7</div>
+        <div class="Box">Hi! Where are going 8</div>
+        <div class="Box">Hi! Where are going 9</div>
+        <div class="Box">Hi! Where are going 10</div>
+        <div class="Box">Hi! Where are going 11</div>
+        <div class="Box">Hi! Where are going 12</div>
+        <div class="Box">Hi! Where are going 13</div>
+        <div class="Box">Hi! Where are going 14</div>
+        <div class="Box">Hi! Where are going 15</div>
+        <div class="Box">Hi! Where are going 16</div>
+        <div class="Box">Hi! Where are going 17</div>
+        <div class="Box">Hi! Where are going 18</div>
+        <div class="Box">Hi! Where are going 19</div>
+        <div class="Box">Hi! Where are going 20</div>
+        <div class="Box">Hi! Where are going 21</div>
+        <div class="Box">Hi! Where are going 22</div>
+        <div class="Box">Hi! Where are going 23</div>
+        <div class="Box">Hi! Where are going 24</div>
+    </div>
+
+    <br>
+
+    <div id="item">
+        <div class="Cont">Hello, I am going market no. 1</div>
+        <div class="Cont">Hello, I am going market no. 2</div>
+        <div class="Cont">Hello, I am going market no. 3</div>
+        <div class="Cont">Hello, I am going market no. 4</div>
+        <div class="Cont">Hello, I am going market no. 5</div>
+        <div class="Cont">Hello, I am going market no. 6</div>
+        <div class="Cont">Hello, I am going market no. 7</div>
+        <div class="Cont">Hello, I am going market no. 8</div>
+        <div class="Cont">Hello, I am going market no. 9</div>
+        <div class="Cont">Hello, I am going market no. 10</div>
+        <div class="Cont">Hello, I am going market no. 11</div>
+        <div class="Cont">Hello, I am going market no. 12</div>
+    </div>
+
+    <br>
+
+    <div id="container">
+        <nav id="navbar" class="items">Home Services About Us Feedback</nav>
+        <section id="section" class="items">Ukraine-Russia War</section>
+        <aside id="aside" class="items">India-Russia Friendship</aside>
+        <footer id="footer" class="items">USA and NATO</footer>
+
+    </div>
+
+    <br>
+
+    <div id="cont">
+        <nav id="N" class="boxes">
+            <span>Home</span>
+            <span>Services</span>
+            <span>About Us</span>
+            <span>Contact Us</span>
+            <span>Feedback</span>
+        </nav>
+        <sextion id="S" class="boxes">
+            <h2>Welcome To the Super Iitian Site</h2>
+        </sextion>
+        <aside id="A" class="boxes">
+            <h3>How to crack Jee Advance</h3>
+        </aside>
+        <footer id="F" class="boxes">Refrence Materials</footer>
+    </div>
+</body>
+
+</html>
